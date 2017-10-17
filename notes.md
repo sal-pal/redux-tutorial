@@ -23,7 +23,7 @@
 ## Basics
 
 ### Actions
-* Actions must have a type property that indicates the type of action being performed. 
+* Actions must have a type property that indicates the type of action being performed.
 * Types should be defined as string constants.
 * Besides the type property, the structure of an action is up to the developer.
 	* Action construction recommendations: https://github.com/acdlite/flux-standard-action
@@ -49,7 +49,7 @@
 	* Reducers need to be predictable, therefore ensure they *only* return state objects.
 * Splitting Reducers
 	* **Reducer Composition**: When two or more reducers manage the state tree.
-	
+
 ### Store
 * **Store**: the object that brings together the actions and reducers.
 * The purpose of the store is to hold the application state.
@@ -68,8 +68,15 @@
 
 ### Usage with React
 * Presentational and container components
-	* 
+	* Container components are generated via `connect()`, which is apart of react-redux.
+	* For small components (AddToDoButton), it is okay to mix function and form.
 
+* Implementing Presentational and Container Components
+	* Can use functional components when the components don't need local state or lifecycle methods.
+	* Container components are react components that use `store.subscribe()` to read a part of the redux state tree and supply props to a presentational component that renders it.
+	* Recommended to use `connect()` when creating container components.
+	* To use `connect()`, must first define a special function called `mapStateToProps`. This function transforms data returned the store, with the final transformation being piped to presentational components as props.
+	* Container components can also dispatch actions by defining a special function called `mapDispatchToProps`. It recieves `dispatch()` and returns callback props to be injected into presentational components
 
 ## Study Questions
 1. What is the state tree?
@@ -78,10 +85,11 @@
 5. What is a bound action creator?
 6. What are the three things you must never do inside a reducer?
 2. What is a concrete example of when to separate the state?
-2. Why is the state parameter different for every reducer?
 3. What is reducer composition?
 3. Why is `combineReducers()` so useful for reducer composition?
 4. What is the purpose of the store and what are its operations?
 5. What is strict unidirectional data flow?
 6. What are the steps of Redux's data lifecycle?
-7. What is the benfit of strictly regulating state changes? 
+7. What is the benfit of strictly regulating state changes?
+8. What's the difference between presentational vs container components?
+9. What's the purpose of `mapStateToProps`?
