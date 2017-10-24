@@ -1,4 +1,4 @@
-# React Tutorial Notes
+# Redux Tutorial Notes
 
 ## Intro
 
