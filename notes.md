@@ -1,4 +1,4 @@
-?# React Tutorial Notes
+# React Tutorial Notes
 
 ## Intro
 
@@ -77,19 +77,23 @@
 	* Recommended to use `connect()` when creating container components.
 	* To use `connect()`, must first define a special function called `mapStateToProps`. This function transforms data returned the store, with the final transformation being piped to presentational components as props.
 	* Container components can also dispatch actions by defining a special function called `mapDispatchToProps`. It recieves `dispatch()` and returns callback props to be injected into presentational components
+	* All container components need access to the store so they can subscribe to it.
+	* Can use a special react-redux component `<Provider>` to give all components in the application access to the store. Only need to use it once when rendering th root component.
 
 ## Study Questions
 1. What is the state tree?
 2. What is the high-level difference between an action and a reducer?
-4. Every action object must contain which property?
-5. What is a bound action creator?
-6. What are the three things you must never do inside a reducer?
-2. What is a concrete example of when to separate the state?
-3. What is reducer composition?
-3. Why is `combineReducers()` so useful for reducer composition?
-4. What is the purpose of the store and what are its operations?
-5. What is strict unidirectional data flow?
-6. What are the steps of Redux's data lifecycle?
-7. What is the benfit of strictly regulating state changes?
-8. What's the difference between presentational vs container components?
-9. What's the purpose of `mapStateToProps`?
+3. Every action object must contain which property?
+4. What is a bound action creator?
+5. What are the three things you must never do inside a reducer?
+6. What is a concrete example of when to separate the state?
+7. What is reducer composition?
+8. Why is `combineReducers()` so useful for reducer composition?
+9. What is the purpose of the store and what are its operations?
+10. What is strict unidirectional data flow?
+11. What are the steps of Redux's data lifecycle?
+12. What is the benfit of strictly regulating state changes?
+13. What's the difference between presentational vs container components?
+14. What's the purpose of `mapStateToProps`?
+15. What's the purpose of `mapDispatchToProps`?
+16. What's the name of the component that connects container components to the store?
